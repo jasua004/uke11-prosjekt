@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dyq312tuwmpj8"]
+
+[ext_resource type="Texture2D" uid="uid://dck5p2f758yu5" path="res://assets/sprites/spike.png" id="1_xiy72"]
+[ext_resource type="Script" uid="uid://bkprre01yb70b" path="res://assets/sprites/area_2d.gd" id="1_xp6aw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xiy72"]
+radius = 5.4196777
+height = 50.48935
+
+[node name="spikess" type="Node2D" unique_id=1995734417]
+
+[node name="Area2D" type="AnimatableBody2D" parent="." unique_id=550567265]
+sync_to_physics = false
+script = ExtResource("1_xp6aw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1533537365]
+position = Vector2(-7.275958e-12, 0.27142847)
+scale = Vector2(0.36902633, 0.37389186)
+shape = SubResource("CapsuleShape2D_xiy72")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Area2D" unique_id=144882082]
+position = Vector2(-7.275958e-12, -1.1368684e-13)
+scale = Vector2(1.2000026, 3.8000004)
+texture = ExtResource("1_xiy72")
+region_enabled = true
+region_rect = Rect2(9, 27, 5, 5)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://n3aewvqavrpb"]
+[gd_scene format=3 uid="uid://n3aewvqavrpb"]
 
 [ext_resource type="Texture2D" uid="uid://dpr033hi6m32l" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 
@@ -12,6 +12,7 @@ const JUMP_VELOCITY = -320.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity: int = ProjectSettings.get_setting(\"physics/2d/default_gravity\")
 
+@onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,12 +20,22 @@ func _physics_process(delta: float) -> void:
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	var direction := Input.get_axis(\"move_left\", \"move_right\")
+	
+	# flip sprite
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+			animated_sprite.flip_h = true
+	
+	
+	
+# apply movement
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -39,6 +50,8 @@ func _on_spikes_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		#await get_tree().create_timer(2.0).timeout
 		get_tree().reload_current_scene()
+		
+
 
 	
 "
@@ -83,17 +96,18 @@ animations = [{
 radius = 4.0
 height = 14.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" unique_id=352792893]
 z_index = 5
+collision_layer = 3
 script = SubResource("GDScript_3vyb7")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1817260624]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.2078121
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1429407772]
 position = Vector2(0, -9)
 shape = SubResource("CapsuleShape2D_g2els")

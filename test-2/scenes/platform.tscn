@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceu6ar6gugiol"]
+[gd_scene format=3 uid="uid://caj6lu6j6qqqw"]
 
-[ext_resource type="Texture2D" uid="uid://dhtkljockt54y" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="Texture2D" uid="uid://dhtkljockt54y" path="res://assets/sprites/platforms.png" id="1_kx63a"]
 
-[node name="platform" type="AnimatableBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kx63a"]
+size = Vector2(30, 8)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_ba0x2")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcjnh"]
+size = Vector2(30, 8)
+
+[node name="platform" type="AnimatableBody2D" unique_id=1778018209]
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=317420949]
+texture = ExtResource("1_kx63a")
 region_enabled = true
 region_rect = Rect2(16, 0, 32, 9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490214308]
+shape = SubResource("RectangleShape2D_kx63a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1117612045]
+scale = Vector2(1.1200049, 1.2399994)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=675629906]
+position = Vector2(0, 2.3841858e-07)
+shape = SubResource("RectangleShape2D_vcjnh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
