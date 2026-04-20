@@ -21,7 +21,7 @@ Torsdag
 
 Fredag
 Laget en dør jeg skal eventuelt bruke for hvert level. I level 1, så trenger man 6 coins for å åpne døra i slutten av levelet. Koden funker greit, men når jeg fikk mer enn 6 coins, så krasjet spillet med errormeldingen «Attempt to call function 'unlock' in base 'previously freed' on a null instance.»
-Det skjedde fordi queue_free() fjerner den delen av spillet helt, og når GameManager prøver å bruke door.unlock(), så finnes ikke døra lenger. Det fører til at spillet krasjer når koden prøver å bruke den
+Det skjedde fordi queue_free() fjerner døren helt, og når GameManager prøver å bruke door.unlock(), så finnes ikke døra lenger. Det fører til at spillet krasjer når koden prøver å bruke den
 https://cdn.discordapp.com/attachments/970697253121568818/1495718195732942908/image.png?ex=69e7439e&is=69e5f21e&hm=b44a08e8cf5a5a36c4731473eab8a420fb2d43c3e2c006649eca01ee9ec77e19&
 https://cdn.discordapp.com/attachments/970697253121568818/1495718196404293713/image.png?ex=69e7439f&is=69e5f21f&hm=3256870bbb14f09305600cdf4f672fee5b174f874e378f84e69eb789e3455d7d&
    
