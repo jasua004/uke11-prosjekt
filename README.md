@@ -1,6 +1,27 @@
 # uke11-prosjekt
+uke 11
 interessegruppe spill. var syk mandag-onsdag, brukte tiden jeg hadde på torsdag for å se på oppgaven og se videoer om hvordan man eksporterer godot spill
 
 (etter hvert gikk jeg for den lette metoden, og la i stedet selve source code inn i en mappe i stedet for å installere templates og eksportere spillet hit)
 
 planen er å gjøre hele spillet om til et level som er ca. 4-5 ganger så lang som det jeg har nå, og legge til ulike måter å få spilleren til å bli irritert/lei av spillet. så langt har jeg en bevegende plattform, falske blokker som man kan falle gjennom, en dødelig spiker og en killzone under mappet som teleporterer deg til start om man faller av. jeg tror disse målene er realistiske
+
+---------------------------------------------------
+# uke 16 logg
+Mandag
+Gjorde ikke noe særlig
+
+Tirsdag
+Prøvde å eksportere spillet mitt til HTML5, men fikk meldingen «failed to fetch» når jeg åpnet spillet. Jeg tenker at det var fordi nettleseren ikke hadde tilgang til de filene, og derfor kunne ikke spillet lastes inn.
+
+Onsdag
+
+Torsdag
+
+
+Fredag
+Laget en dør jeg skal eventuelt bruke for hvert level. I level 1, så trenger man 6 coins for å åpne døra i slutten av levelet. Koden funker greit, men når jeg fikk mer enn 6 coins, så krasjet spillet med errormeldingen «Attempt to call function 'unlock' in base 'previously freed' on a null instance.»
+Det skjedde fordi queue_free() fjerner den delen av spillet helt, og når GameManager prøver å bruke door.unlock(), så finnes ikke døra lenger. Det fører til at spillet krasjer når koden prøver å bruke den
+https://cdn.discordapp.com/attachments/970697253121568818/1495718195732942908/image.png?ex=69e7439e&is=69e5f21e&hm=b44a08e8cf5a5a36c4731473eab8a420fb2d43c3e2c006649eca01ee9ec77e19&
+https://cdn.discordapp.com/attachments/970697253121568818/1495718196404293713/image.png?ex=69e7439f&is=69e5f21f&hm=3256870bbb14f09305600cdf4f672fee5b174f874e378f84e69eb789e3455d7d&
+   
