@@ -16,8 +16,9 @@ Prøvde å eksportere spillet mitt til HTML5, men fikk meldingen «failed to fet
 
 Onsdag
 
-Torsdag
 
+Torsdag
+fikk hoste siden lokalt og på en server, men brukte ngrok (nesten det samme som å hoste server via itch.io, bare at ngrok er dev server og kan ikke være live 24/7). vurderte å gjøre det via flask også, men var ikke motivert nok
 
 Fredag
 Laget en dør jeg skal eventuelt bruke for hvert level. I level 1, så trenger man 6 coins for å åpne døra i slutten av levelet. Koden funker greit, men når jeg fikk mer enn 6 coins, så krasjet spillet med errormeldingen «Attempt to call function 'unlock' in base 'previously freed' on a null instance.»
