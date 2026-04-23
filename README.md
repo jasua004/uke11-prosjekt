@@ -28,3 +28,5 @@ https://files.catbox.moe/4nepn7.png
 
 https://files.catbox.moe/h7yy40.png
    
+har lært hvordan man hoster server med ngrok. sendte ulike venner lenken til spillet mitt, de synes det var gøy (selv om spillet er kort).
+blitt litt mer kjent med godot og powershell kommandoer
