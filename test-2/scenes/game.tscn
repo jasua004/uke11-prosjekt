@@ -531,7 +531,7 @@ script = ExtResource("1_vtaks")
 
 [node name="blueskybox" type="Sprite2D" parent="." unique_id=519934496]
 show_behind_parent = true
-position = Vector2(-24404, 3109)
+position = Vector2(-20835, 3961)
 scale = Vector2(13.109897, 15.308459)
 texture = ExtResource("6_p57ef")
 
@@ -925,6 +925,36 @@ shape = SubResource("RectangleShape2D_ca42v")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1797354634]
 
+[node name="NamePanel" type="Panel" parent="UI" unique_id=343598367]
+process_mode = 3
+offset_left = 301.0
+offset_top = 189.0
+offset_right = 701.0
+offset_bottom = 339.0
+
+[node name="Label" type="Label" parent="UI/NamePanel" unique_id=403863834]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 50.0
+text = "Enter your nickname for the leaderboard:"
+
+[node name="NameInput" type="LineEdit" parent="UI/NamePanel" unique_id=324620206]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 50.0
+offset_right = 290.0
+offset_bottom = 90.0
+
+[node name="StartButton" type="Button" parent="UI/NamePanel" unique_id=996343203]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 100.0
+offset_right = 110.0
+offset_bottom = 140.0
+text = "Start"
+
 [node name="TimerLabel" type="Label" parent="UI" unique_id=563938945]
 anchors_preset = 5
 anchor_left = 0.5
@@ -934,6 +964,53 @@ offset_right = 20.0
 offset_bottom = 23.0
 grow_horizontal = 2
 text = "0.00"
+
+[node name="CoinLabel" type="Label" parent="UI" unique_id=250870390]
+offset_right = 90.0
+offset_bottom = 23.0
+text = "Coins: 0/6"
+
+[node name="MainMenu" type="Panel" parent="UI" unique_id=2076230551]
+process_mode = 3
+offset_left = 300.0
+offset_top = 200.0
+offset_right = 700.0
+offset_bottom = 400.0
+
+[node name="Background" type="ColorRect" parent="UI/MainMenu" unique_id=1402231974]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -300.0
+offset_top = -200.0
+offset_right = 852.0
+offset_bottom = 448.0
+mouse_filter = 2
+mouse_behavior_recursive = 1
+color = Color(0.3019608, 0.3019608, 0.3019608, 1)
+
+[node name="Label" type="Label" parent="UI/MainMenu" unique_id=360084503]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 20.0
+offset_right = 50.0
+offset_bottom = 43.0
+text = "untitled platformer"
+
+[node name="PlayButton" type="Button" parent="UI/MainMenu" unique_id=1906389902]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 70.0
+offset_right = 250.0
+offset_bottom = 110.0
+text = "Play"
+
+[node name="settings" type="Button" parent="UI/MainMenu" unique_id=336904144]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 120.0
+offset_right = 250.0
+offset_bottom = 160.0
+text = "settings"
 
 [connection signal="body_entered" from="spikes" to="player" method="_on_spikes_body_entered"]
 [connection signal="body_entered" from="finish" to="finish" method="_on_body_entered"]
